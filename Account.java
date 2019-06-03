@@ -1,31 +1,40 @@
-public class Account {
+/****************************************************
+ * RAY O ABEL
+ * 
+ * A program that allows you to open an account and deposite money 
+ * 
+ ******************************************************/
 
-private double balance; 
+public class Account{
+        
+    private String name;
+    private double balance;
+    public Account(String name,double balance ){
+        this.name=name;
+        if(balance > 0.0){
+         this.balance = balance;
+        }
+    }
+public void deposits(double deposits){
+    if(deposits >0.0 ){
+        balance+=deposits;
+    }
+}
+public void withdrawal(double withdrawal){
 
-public Account(double initBalance)
-{
-if(initBalance > 0.0)
-balance=initBalance;
-} 
-public void credit(double amount)
-{
-balance=balance+amount; 
-} 
-
-public void debit(double amount)
-{
-if (amount > balance){
-System.out.println("Withdrawal amount exceeded account balance.");
-
-}else{
-	balance=balance-amount;	
-
+    if (withdrawal > balance){
+        System.out.println("Insuffient balance available");
+    }else{
+        balance-=withdrawal;
+    }
 }
 
+ public double getBalance(){
+     return balance;
+ } public void setName(String name){
+     this.name= name;
+ }
+ public String getName(){
+     return name;
+ }
 }
-
-public double getBalance()
-{
-return balance; 
-} 
-} 

@@ -1,37 +1,13 @@
-import java.util.Scanner;
- 
-public class InvoiceTest {
-    public static void main (String [] args) {
- 
- Invoice invoice = new Invoice (" ", " ", 0, 0.0);
- 
- Scanner input = new Scanner (System.in);
-         
-        String item;
-        String description;
-        int quantity;
-        double price;
-         
-        System.out.print ("Enter Number: ");
-        item = input.nextLine();
-        invoice.setPartNumber(item);
-         
-        System.out.print ("Enter Description of Item Purchased: ");
-        description = input.nextLine();
-        invoice.setPartDescription(description);
-         
-        System.out.print ("Enter The Quantity of Item Purchased: ");
-        quantity = input.nextInt();
-    if (quantity > 0)
-        invoice.setQuantityOfItemPurchased(quantity);
-         
-        System.out.print ("Enter The Price Per Item: ");
-        price = input.nextDouble();
-    if (price > 0)
-        invoice.setPricePerItem (price);
-         
-        System.out.printf ("The Total Amount for all items purchased = $%.2f\n",
-                invoice.getInvoiceAmount());
- 
+public class InvoiceTest{
+    public static void main(String [] args){
+
+
+       Invoice account1 = new Invoice("100", "bag", 2, 500.00);
+       Invoice account2 = new Invoice("101", "jack", 1, -1.45);
+
+       System.out.println(account1.getInvoice());
+       System.out.println(account2.getInvoice());
+       System.out.println(account1.getNumber() + " " + account1.getDescription() + " " + account1.getPQuantity() + " " + account1.getPrice());
+       System.out.println(account2.getNumber() + " " + account2.getDescription() + " " + account2.getPQuantity() + " " + account2.getPrice());
     }
 }

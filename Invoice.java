@@ -1,53 +1,51 @@
-public class Invoice {
-     
-    private String partNumber;
-    private String partDescription;
-    private int quantityOfItemPurchased;
-    private double pricePerItem;
-     
-    public Invoice (String number, String description, int quantity, double price) {
-        partNumber = number;
-        partDescription = description;
-        quantityOfItemPurchased = quantity;
-        pricePerItem = price;
+public class Invoice{
+    private String number;
+    private String description;
+    private int quantity;
+    private double price;
+
+    public Invoice(String number, String description, int quantity, double price){
+        this.number = number;
+        this.description = description;
+        this.quantity = quantity;
+        this.price = price;
+    }    
+    public void setNumber(String number){
+        this.number = number;
     }
-     
-    public void setPartNumber (String number) {
-        partNumber = number;
+    public void setDescription(String description){
+        this.description = description;
     }
-     
-    public String getPartNumber () {
-        return partNumber;
+    public void setQuantity(int quantity){
+        this.quantity = quantity;
     }
-     
-    public void setPartDescription (String description) {
-        partDescription = description;
+    public void setPrice(double price){
+        this.price = price;
     }
-     
-    public String getPartDescription () {
-        return partDescription;
+    public String getNumber(){
+        return number;
     }
-     
-    public void setQuantityOfItemPurchased (int quantity) {
-        quantityOfItemPurchased = quantity;
+    public String getDescription(){
+        return description;
     }
-     
-    public int getQuantityOfItemPurchased () {
-        return quantityOfItemPurchased;
+    public int getPQuantity(){
+        return quantity;
     }
-     
-    public void setPricePerItem (double price) {
-        pricePerItem = price;
+    public double getPrice(){
+        return price;
     }
-     
-    public double getPricePerItem () {
-        return pricePerItem;
+    public double getInvoice(){
+        
+       
+        if(quantity < 0){
+            quantity = 0;
+        }  
+        if(price < 0){
+            price = 0.0;
+        }
+        double amount = quantity * price;
+            return amount;
+        
     }
-     
-    public double getInvoiceAmount () {
-        double calculateTotalAmount;
-        calculateTotalAmount = quantityOfItemPurchased * pricePerItem;
-        return calculateTotalAmount;
-    }
-     
- }
+  
+}
